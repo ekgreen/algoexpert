@@ -15,9 +15,9 @@ public class ThreeNumberSum {
         final List<Integer[]> actual = threeNumberSum(arr, targetSum);
 
         List<Integer[]> expected = new ArrayList<>();
-        expected.add(new Integer[] {3, 5, -8});
-        expected.add(new Integer[] {1, -6, 5});
-        expected.add(new Integer[] {2, -8, 6});
+        expected.add(new Integer[] {-8, 2, 6});
+        expected.add(new Integer[] { -8, 3, 5,});
+        expected.add(new Integer[] {-6, 1, 5});
 
         for (int i = 0; i < expected.size(); i++) {
             Assertions.assertArrayEquals(expected.get(i), actual.get(i));
@@ -26,6 +26,8 @@ public class ThreeNumberSum {
 
     public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
         // Write your code here.
+        Arrays.sort(array);
+
         final ArrayList<Integer[]> result = new ArrayList<>();
 
         final Set<Integer> distinct = new HashSet<>();
@@ -42,7 +44,7 @@ public class ThreeNumberSum {
                 int c2 = array[v2];
                 int c3 = c2c3 - c2;
 
-                if (c1 != c2 && c2 != c3 && c1 != c3 && distinct.contains(c3)) {
+                if (c1 < c2 && c2 < c3 && distinct.contains(c3)) {
                     result.add(new Integer[]{c1, c2, c3});
                 }
             }
