@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
+// TODO
 public class ApartmentHunting {
 
     @Test

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.stream.IntStream;
 
+// TODO
 public class FindLooP {
 
     @Test
@@ -27,6 +28,9 @@ public class FindLooP {
 
             if(v < 0)
                 return head;
+
+            if(v == 0)
+                head.value = 1;
 
             head.value = -head.value;
             head = head.next;
